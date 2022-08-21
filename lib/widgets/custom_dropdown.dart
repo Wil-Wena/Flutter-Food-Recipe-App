@@ -29,14 +29,13 @@ class _CustomDropdownMenuItemState<T> extends State<CustomDropdownMenuItem<T>> {
       child: InkWell(
         onTap: () => Navigator.of(context).pop<T>(widget.value),
         child: Container(
-          constraints: const BoxConstraints(minWidth: 30.0),
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: ListTile(
               title: Text(
                 widget.text,
                 style: TextStyle(
-                  fontSize: 14.0,
+                  fontSize: 15.0,
                   fontWeight: FontWeight.bold,
                   color: Colors.grey.shade600,
                 ),
