@@ -37,28 +37,34 @@ class _MyRecipesListState extends State<MyRecipesList> {
           return SizedBox(
             height: 100,
             child: Slidable(
-              actionPane: SlidableDrawerActionPane(),
-              actionExtentRatio: 0.25,
-              actions: <Widget>[
-                IconSlideAction(
-                  caption: 'Delete',
-                  color: Colors.transparent,
-                  foregroundColor: Colors.black,
-                  iconWidget: const Icon(Icons.delete, color: Colors.red),
-                  // TODO 7
-                  onTap: () {},
-                )
-              ],
-              secondaryActions: <Widget>[
-                IconSlideAction(
-                  caption: 'Delete',
-                  color: Colors.transparent,
-                  foregroundColor: Colors.black,
-                  iconWidget: const Icon(Icons.delete, color: Colors.red),
-                  // TODO 8
-                  onTap: () {},
-                )
-              ],
+              key: ValueKey(0),
+              endActionPane: ActionPane(
+                motion: DrawerMotion(),
+                children: [
+                  SlidableAction(
+                    autoClose: true,
+                    flex: 1,
+                    onPressed: (value) {
+                      setState(() {});
+                    },
+                    backgroundColor: Colors.red,
+                    foregroundColor: Colors.white,
+                    icon: Icons.delete,
+                    label: 'Delete',
+                  ),
+                  SlidableAction(
+                    autoClose: true,
+                    flex: 1,
+                    onPressed: (value) {
+                      setState(() {});
+                    },
+                    backgroundColor: Colors.blueAccent,
+                    foregroundColor: Colors.white,
+                    icon: Icons.edit,
+                    label: 'Edit',
+                  ),
+                ],
+              ),
               child: Card(
                 elevation: 1.0,
                 shape: RoundedRectangleBorder(
